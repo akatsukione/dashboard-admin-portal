@@ -9,7 +9,7 @@ interface Employee {
 	department: string;
 }
 
-const EmployeesTable: React.FC = () => {
+export const EmployeesTable: React.FC = () => {
 	const [data, setData] = useState<Employee[]>([
 		{ id: 1, name: "John Doe", position: "Developer", department: "IT" },
 		{
@@ -68,5 +68,3 @@ const EmployeesTable: React.FC = () => {
 		</div>
 	);
 };
-
-export default EmployeesTable;

@@ -9,7 +9,7 @@ interface Country {
 	population: string;
 }
 
-const CountriesTable: React.FC = () => {
+export const CountriesTable: React.FC = () => {
 	const [data, setData] = useState<Country[]>([
 		{ id: 1, name: "United States", code: "US", population: "331 million" },
 		{ id: 2, name: "United Kingdom", code: "UK", population: "68 million" },
@@ -63,5 +63,3 @@ const CountriesTable: React.FC = () => {
 		</div>
 	);
 };
-
-export default CountriesTable;

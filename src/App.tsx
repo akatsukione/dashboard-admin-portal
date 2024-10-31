@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout";
-import EmployeesTable from "./components/EmployeesTable";
-import DepartmentsTable from "./components/DepartmentsTable";
-import CountriesTable from "./components/CountriesTable";
-import Metrics from "./components/Metrics";
+import { Layout } from "./components/Layout";
+import { EmployeesTable } from "./components/EmployeesTable";
+import { DepartmentsTable } from "./components/DepartmentsTable";
+import { CountriesTable } from "./components/CountriesTable";
+import { Metrics } from "./components/Metrics";
 
 const App: React.FC = () => {
 	return (

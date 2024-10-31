@@ -19,7 +19,7 @@ interface LayoutProps {
 	children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
 	const location = useLocation();
 
 	return (
@@ -74,5 +74,3 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 		</div>
 	);
 };
-
-export default Layout;

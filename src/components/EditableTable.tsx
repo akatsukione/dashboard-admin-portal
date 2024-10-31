@@ -37,11 +37,11 @@ interface EditableTableProps<T extends object> {
 	updateMyData: (rowIndex: number, columnId: string, value: any) => void;
 }
 
-function EditableTable<T extends object>({
+export const EditableTable = <T extends object>({
 	columns,
 	data,
 	updateMyData,
-}: EditableTableProps<T>) {
+}: EditableTableProps<T>): JSX.Element => {
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
 		useTable({
 			columns,
@@ -94,6 +94,6 @@ function EditableTable<T extends object>({
 			</table>
 		</div>
 	);
-}
+};
 
 export default EditableTable;
