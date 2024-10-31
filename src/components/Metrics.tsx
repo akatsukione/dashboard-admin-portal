@@ -16,7 +16,6 @@ import {
 	ResponsiveContainer,
 } from "recharts";
 import { Select } from "@radix-ui/react-select";
-
 interface DataPoint {
 	name: string;
 	value: number;
@@ -33,7 +32,7 @@ const data: DataPoint[] = [
 
 type ChartType = "line" | "bar" | "pie" | "area";
 
-const Metrics: React.FC = () => {
+export const Metrics: React.FC = () => {
 	const [chartType, setChartType] = useState<ChartType>("line");
 
 	const renderChart = () => {
@@ -93,7 +92,16 @@ const Metrics: React.FC = () => {
 					</AreaChart>
 				);
 			default:
-				return null;
+				return (
+					<LineChart data={data}>
+						<XAxis dataKey="name" />
+						<YAxis />
+						<CartesianGrid strokeDasharray="3 3" />
+						<Tooltip />
+						<Legend />
+						<Line type="monotone" dataKey="value" stroke="#8884d8" />
+					</LineChart>
+				);
 		}
 	};
 
@@ -102,7 +110,7 @@ const Metrics: React.FC = () => {
 			<h2 className="text-2xl font-semibold mb-4">Metrics</h2>
 			<div className="space-y-4">
 				<div className="flex justify-end">
-					<Select.Root
+					{/* <Select.Root
 						onValueChange={(value: ChartType) => setChartType(value)}
 						defaultValue={chartType}
 					>
@@ -115,7 +123,7 @@ const Metrics: React.FC = () => {
 							<Select.Item value="pie">Pie Chart</Select.Item>
 							<Select.Item value="area">Area Chart</Select.Item>
 						</Select.Content>
-					</Select.Root>
+					</Select.Root> */}
 				</div>
 				<div className="h-[400px]">
 					<ResponsiveContainer width="100%" height="100%">
@@ -126,5 +134,3 @@ const Metrics: React.FC = () => {
 		</div>
 	);
 };
-
-export default Metrics;
